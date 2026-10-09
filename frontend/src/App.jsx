@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import OutfitSection from './components/OutfitSection'
+import CsvDataSection from './components/CsvDataSection'
 import Studio from './components/Studio'
 import Footer from './components/Footer'
 
@@ -30,7 +31,19 @@ function App() {
         </section>
 
         <OutfitSection />
+        <main>
+        <Hero />
 
+        <section className="intro" id="about">
+          {/* Giữ nguyên phần giới thiệu hiện tại */}
+        </section>
+
+        <OutfitSection />
+
+        <CsvDataSection />
+
+        <Studio />
+      </main>
         <Studio />
       </main>
 
