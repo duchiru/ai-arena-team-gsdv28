@@ -1,11 +1,23 @@
 
-function OutfitCard({ name, description, category, number }) {
+function OutfitCard({
+  name,
+  description,
+  category,
+  number,
+  image,
+  isSelected,
+  onSelect,
+}) {
+  const visualStyle = image
+    ? { backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+    : {}
+
   return (
     <article className="outfit-card">
-      <div className="outfit-card-visual">
+      <div className={`outfit-card-visual${image ? ' outfit-card-visual--has-image' : ''}`} style={visualStyle}>
+        {image && <div className="outfit-card-overlay" />}
         <span className="outfit-number">{number}</span>
         <span className="outfit-category">{category}</span>
-        <span className="outfit-symbol">✳</span>
       </div>
 
       <div className="outfit-card-content">
@@ -17,9 +29,16 @@ function OutfitCard({ name, description, category, number }) {
           {description}
         </p>
 
-        <a className="outfit-link" href="#studio">
-          Khám phá thêm ↗
-        </a>
+        <button
+          className={`outfit-link outfit-link-button${
+            isSelected ? ' outfit-link-button--active' : ''
+          }`}
+          type="button"
+          aria-expanded={isSelected}
+          onClick={onSelect}
+        >
+          {isSelected ? 'Ẩn phong cách' : 'Xem phong cách ↗'}
+        </button>
       </div>
     </article>
   )

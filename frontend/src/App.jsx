@@ -31,19 +31,9 @@ function App() {
         </section>
 
         <OutfitSection />
-        <main>
-        <Hero />
-
-        <section className="intro" id="about">
-          {/* Giữ nguyên phần giới thiệu hiện tại */}
-        </section>
-
-        <OutfitSection />
 
         <CsvDataSection />
 
-        <Studio />
-      </main>
         <Studio />
       </main>
 

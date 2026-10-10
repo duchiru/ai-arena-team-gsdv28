@@ -1,7 +1,14 @@
 
+import heroBg from '../assets/hero-bg.png'
+
 function Hero() {
   return (
-    <section className="hero" id="home">
+    <section
+      className="hero"
+      id="home"
+      style={{ backgroundImage: `url(${heroBg})` }}
+    >
+      <div className="hero-overlay" />
       <p className="eyebrow">
         DI SẢN TRONG PHONG CÁCH MỚI
       </p>
